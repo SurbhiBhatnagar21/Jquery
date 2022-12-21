@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<body>
+<h1>Score is :<span id="score"></span></h1>
+<h1>Score is :<span id="score1"></span></h1>
+<button id="getdata">Click</button>
+<script type="text/javascript">
+   setInterval(()=>{
+$("#score").load("Score.txt");
+},200);
+   
+   $("#getdata").on('click',function(){
+   $.get("Score.txt",function(data){
+	$("#score1").text(data);   
+   });
+   });
+</script>
+
+</body>
+</html>
